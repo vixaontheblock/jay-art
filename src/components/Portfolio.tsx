@@ -3,18 +3,18 @@ import Image from "next/image";
 import { useState } from "react";
 
 const images = [
-  "/portfolio/01.jpeg",
-  "/portfolio/02.jpeg",
-  "/portfolio/03.jpeg",
-  "/portfolio/04.jpeg",
-  "/portfolio/05.jpeg",
-  "/portfolio/06.jpeg",
-  "/portfolio/07.jpeg",
+  "/portfolio/01.webp",
+  "/portfolio/02.webp",
+  "/portfolio/03.webp",
+  "/portfolio/04.webp",
+  "/portfolio/05.webp",
+  "/portfolio/06.webp",
+  "/portfolio/07.webp",
   "/portfolio/08.webp",
   "/portfolio/09.webp",
-  "/portfolio/10.jpeg",
-  "/portfolio/11.jpeg",
-  "/portfolio/12.jpeg",
+  "/portfolio/10.webp",
+  "/portfolio/11.webp",
+  "/portfolio/12.webp",
 ];
 
 export default function Portfolio() {
