@@ -6,8 +6,9 @@ export default function About() {
         <div className="sticky top-32">
           <p className="eyebrow mb-4 flex items-center">
             <span className="accent-line" />
+            Sobre mí
           </p>
-          <p className="font-display text-5xl leading-tight uppercase text-[var(--gold)]">
+          <p className="font-display text-5xl leading-tight uppercase text-white">
             Jhair<br />Marín
           </p>
         </div>
@@ -29,12 +30,12 @@ export default function About() {
             la personalidad del artista.
           </p>
 
-          {/* Pill tags */}
+          {/* Pill tags — ahora en blanco/gris, sin gold */}
           <div className="flex flex-wrap gap-2 pt-2">
             {["Cover Art", "Dirección Visual", "Estrategia de Marca", "Diseño Musical"].map((t) => (
               <span
                 key={t}
-                className="text-xs border border-[var(--gold)]/30 text-[var(--gold)] px-3 py-1 rounded-full"
+                className="text-xs border border-white/15 text-white/60 px-3 py-1 rounded-full hover:border-white/30 hover:text-white/80 transition-colors"
               >
                 {t}
               </span>
