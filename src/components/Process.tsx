@@ -23,6 +23,7 @@ export default function Process() {
       <div className="mb-14">
         <p className="eyebrow mb-3 flex items-center">
           <span className="accent-line" />
+          Cómo trabajo
         </p>
         <h2 className="font-display text-6xl uppercase leading-none">Proceso</h2>
       </div>
@@ -33,7 +34,7 @@ export default function Process() {
             key={i}
             className="bg-[var(--bg)] p-8 hover:bg-[#0e0e0e] transition-colors duration-300 group"
           >
-            <p className="font-display text-5xl text-[var(--gold)] opacity-30 group-hover:opacity-60 transition-opacity mb-4">
+            <p className="font-display text-5xl text-white opacity-10 group-hover:opacity-25 transition-opacity mb-4">
               {String(i + 1).padStart(2, "0")}
             </p>
             <h3 className="font-semibold text-sm mb-2 tracking-wide">{s.t}</h3>
