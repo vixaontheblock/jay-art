@@ -33,7 +33,7 @@ export default function Services() {
         <div>
           <p className="eyebrow mb-3 flex items-center">
             <span className="accent-line" />
-            
+            Lo que hago
           </p>
           <h2 className="font-display text-6xl uppercase leading-none">Servicios</h2>
         </div>
@@ -48,7 +48,7 @@ export default function Services() {
             key={i}
             className="group bg-[var(--bg)] p-8 hover:bg-[#0e0e0e] transition-colors duration-300 cursor-default"
           >
-            <span className="text-2xl text-[var(--gold)] block mb-5 group-hover:scale-110 transition-transform duration-200 origin-left">
+            <span className="text-2xl text-white/50 block mb-5 group-hover:text-white group-hover:scale-110 transition-all duration-200 origin-left">
               {s.icon}
             </span>
             <h3 className="font-semibold text-base mb-2">{s.name}</h3>
