@@ -42,6 +42,7 @@ export default function Pricing() {
       <div className="mb-14">
         <p className="eyebrow mb-3 flex items-center">
           <span className="accent-line" />
+          Inversión
         </p>
         <h2 className="font-display text-6xl uppercase leading-none">Planes</h2>
       </div>
@@ -53,7 +54,7 @@ export default function Pricing() {
             className="relative p-8 rounded-sm flex flex-col"
             style={
               p.highlight
-                ? { background: "#999999", color: "#050505" }
+                ? { background: "#ffffff", color: "#050505" }
                 : { background: "#111111", border: "1px solid rgba(255,255,255,0.07)" }
             }
           >
@@ -69,7 +70,7 @@ export default function Pricing() {
             {/* Nota */}
             <p
               className="text-xs uppercase tracking-widest mb-5"
-              style={{ color: p.highlight ? "rgba(5,5,5,0.55)" : "#ffffff" }}
+              style={{ color: p.highlight ? "rgba(5,5,5,0.45)" : "#888888" }}
             >
               {p.note}
             </p>
@@ -96,9 +97,9 @@ export default function Pricing() {
                 <li
                   key={j}
                   className="flex items-start gap-2"
-                  style={{ color: p.highlight ? "rgba(5,5,5,0.75)" : "#888888" }}
+                  style={{ color: p.highlight ? "rgba(5,5,5,0.65)" : "#888888" }}
                 >
-                  <span style={{ color: p.highlight ? "#050505" : "#ffffff", marginTop: "2px" }}>—</span>
+                  <span style={{ color: p.highlight ? "#050505" : "rgba(255,255,255,0.3)", marginTop: "2px" }}>—</span>
                   {f}
                 </li>
               ))}
@@ -111,7 +112,7 @@ export default function Pricing() {
               style={
                 p.highlight
                   ? { background: "#050505", color: "#ffffff" }
-                  : { border: "1px solid rgba(255, 255, 255, 0.4)", color: "#ffffff" }
+                  : { border: "1px solid rgba(255, 255, 255, 0.2)", color: "#ffffff" }
               }
             >
               Empezar
