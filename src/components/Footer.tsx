@@ -11,6 +11,13 @@ export default function Footer() {
           <p className="text-xs text-[var(--muted)]">© 2026 Todos los derechos reservados</p>
         </div>
 
+        {/* Centro — social links */}
+        <div className="flex gap-6 text-xs text-[var(--muted)] tracking-widest uppercase">
+          <a href="https://instagram.com/byjay4rt" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Instagram</a>
+          <a href="https://wa.me/50763958557" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">WhatsApp</a>
+          <a href="mailto:soyjayart@gmail.com" className="hover:text-white transition-colors">Email</a>
+        </div>
+
         {/* Derecha */}
         <p className="text-xs text-[var(--muted)]">
           Desarrollado por{" "}
@@ -18,7 +25,7 @@ export default function Footer() {
             href="https://ruptastudios.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white hover:text-[var(--gold)] transition-colors"
+            className="text-white/50 hover:text-white transition-colors"
           >
             Rupta Studios
           </a>
