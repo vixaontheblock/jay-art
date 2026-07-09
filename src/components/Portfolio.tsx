@@ -40,13 +40,14 @@ export default function Portfolio() {
   };
 
   return (
-    <section id="portfolio" className="py-32 px-6 max-w-6xl mx-auto">
-      <div className="mb-14">
-        <p className="eyebrow mb-3 flex items-center">
-          <span className="accent-line" />
-          Trabajo reciente
+    <section id="portfolio" className="py-28 md:py-36 px-6 max-w-6xl mx-auto">
+      <div className="section-head">
+        <h2 className="font-display text-5xl md:text-6xl uppercase leading-none text-[var(--paper)]">
+          Portafolio
+        </h2>
+        <p className="font-mono text-xs text-[var(--steel)]">
+          {String(images.length).padStart(2, "0")} PIEZAS — HOJA DE CONTACTO
         </p>
-        <h2 className="font-display text-6xl uppercase leading-none">Portafolio</h2>
       </div>
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
@@ -56,19 +57,21 @@ export default function Portfolio() {
             <button
               key={i}
               onClick={() => open(img, i)}
-              className={`group relative overflow-hidden bg-[var(--bg-card)] ${wide ? "md:col-span-2" : ""}`}
+              className={`group relative overflow-hidden bg-[var(--ink-2)] ${wide ? "md:col-span-2" : ""}`}
               style={{ aspectRatio: "1 / 1" }}
-              aria-label={`Ver imagen ${i + 1}`}
+              aria-label={`Ver pieza ${i + 1}`}
             >
               <img
                 src={img}
-                alt={`Proyecto ${i + 1}`}
-                className="w-full h-full object-cover opacity-75 group-hover:opacity-100 group-hover:scale-105 transition duration-500"
+                alt={`Pieza ${i + 1} del portafolio de JayArt`}
+                loading="lazy"
+                className="w-full h-full object-cover opacity-80 grayscale-[0.15] group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-[1.04] transition-all duration-500 ease-out"
               />
-              <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
-                <span className="font-display text-white/80 text-2xl">
-                  {String(i + 1).padStart(2, "0")}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end justify-between p-4">
+                <span className="font-mono text-[var(--paper)]/80 text-xs tracking-widest">
+                  {String(i + 1).padStart(2, "0")} / {String(images.length).padStart(2, "0")}
                 </span>
+                <span className="font-mono text-[var(--ember)] text-xs tracking-widest">VER →</span>
               </div>
             </button>
           );
@@ -78,20 +81,19 @@ export default function Portfolio() {
       {/* Lightbox con navegación */}
       {active && (
         <div
-          className="fixed inset-0 z-50 bg-black/95 backdrop-blur-sm flex items-center justify-center p-6"
+          className="fixed inset-0 z-[70] bg-black/96 backdrop-blur-sm flex items-center justify-center p-6"
           onClick={() => setActive(null)}
         >
           <button
-            className="absolute top-6 right-6 text-white/30 hover:text-white text-xl transition-colors"
+            className="absolute top-6 right-6 text-[var(--steel)] hover:text-[var(--paper)] text-xl transition-colors"
             onClick={() => setActive(null)}
             aria-label="Cerrar"
           >
             ✕
           </button>
 
-          {/* Prev */}
           <button
-            className="absolute left-4 md:left-10 text-white/30 hover:text-white text-3xl transition-colors p-2"
+            className="absolute left-4 md:left-10 text-[var(--steel)] hover:text-[var(--ember)] text-3xl transition-colors p-2"
             onClick={prev}
             aria-label="Anterior"
           >
@@ -100,22 +102,20 @@ export default function Portfolio() {
 
           <img
             src={active}
-            alt="Vista ampliada"
+            alt="Vista ampliada de la pieza seleccionada"
             className="max-h-[85vh] max-w-full object-contain"
             onClick={(e) => e.stopPropagation()}
           />
 
-          {/* Next */}
           <button
-            className="absolute right-4 md:right-10 text-white/30 hover:text-white text-3xl transition-colors p-2"
+            className="absolute right-4 md:right-10 text-[var(--steel)] hover:text-[var(--ember)] text-3xl transition-colors p-2"
             onClick={next}
             aria-label="Siguiente"
           >
             ›
           </button>
 
-          {/* Counter */}
-          <p className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/30 text-xs tracking-widest">
+          <p className="absolute bottom-6 left-1/2 -translate-x-1/2 font-mono text-[var(--steel)] text-xs tracking-widest">
             {String(activeIndex + 1).padStart(2, "0")} / {String(images.length).padStart(2, "0")}
           </p>
         </div>
