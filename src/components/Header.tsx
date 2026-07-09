@@ -29,7 +29,7 @@ export default function Header() {
           }`}
         >
           <a href="#" className="flex items-center gap-3">
-            <Image src="/logo-mark.png" alt="JayArt" width={34} height={39} priority />
+            <Image src="/favicon.ico" alt="JayArt" width={34} height={39} priority />
             <span className="font-display text-xl tracking-tight text-[var(--paper)]">JAYART</span>
           </a>
 
