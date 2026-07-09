@@ -4,7 +4,7 @@ export default function Contact() {
       <div className="grid md:grid-cols-[1fr_1.3fr] gap-16 items-center">
         {/* Izquierda */}
         <div>
-          <span className="font-mono text-xs text-[var(--ember)] tracking-widest">05 — CONTACTO</span>
+          <span className="font-mono text-xs text-[var(--ember)] tracking-widest">CONTACTO</span>
           <h2 className="font-display text-5xl md:text-6xl uppercase leading-[0.9] mt-4 mb-6 text-[var(--paper)]">
             Hablemos
             <br />
