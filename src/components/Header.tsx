@@ -1,12 +1,13 @@
 "use client";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const navLinks = [
-  { n: "01", href: "#about", label: "Quién soy" },
-  { n: "02", href: "#services", label: "Servicios" },
-  { n: "03", href: "#portfolio", label: "Portafolio" },
-  { n: "04", href: "#pricing", label: "Planes" },
-  { n: "05", href: "#contact", label: "Contacto" },
+  { href: "#about", label: "Quién soy" },
+  { href: "#services", label: "Servicios" },
+  { href: "#portfolio", label: "Portafolio" },
+  { href: "#pricing", label: "Planes" },
+  { href: "#contact", label: "Contacto" },
 ];
 
 export default function Header() {
@@ -23,12 +24,13 @@ export default function Header() {
     <>
       <header className="fixed top-0 w-full z-50 px-4 pt-4">
         <div
-          className={`max-w-6xl mx-auto flex justify-between items-center px-6 py-3.5 rounded-lg transition-all duration-300 ${
+          className={`max-w-6xl mx-auto flex justify-between items-center px-5 py-3 rounded-lg transition-all duration-300 ${
             scrolled ? "glass-strong" : "bg-transparent border border-transparent"
           }`}
         >
-          <a href="#" className="font-display text-2xl tracking-tight text-[var(--paper)]">
-            JAYART
+          <a href="#" className="flex items-center gap-3">
+            <Image src="/logo-mark.png" alt="JayArt" width={34} height={39} priority />
+            <span className="font-display text-xl tracking-tight text-[var(--paper)]">JAYART</span>
           </a>
 
           <nav className="hidden md:flex gap-8">
@@ -36,11 +38,8 @@ export default function Header() {
               <a
                 key={l.href}
                 href={l.href}
-                className="group flex items-center gap-2 text-xs tracking-wide text-[var(--paper-dim)] hover:text-[var(--paper)] transition-colors duration-200"
+                className="text-xs tracking-wide text-[var(--paper-dim)] hover:text-[var(--paper)] transition-colors duration-200"
               >
-                <span className="font-mono text-[0.65rem] text-[var(--steel)] group-hover:text-[var(--paper)] transition-colors">
-                  {l.n}
-                </span>
                 {l.label}
               </a>
             ))}
@@ -74,9 +73,8 @@ export default function Header() {
             key={l.href}
             href={l.href}
             onClick={() => setMenuOpen(false)}
-            className="flex items-baseline gap-4 py-3 border-b border-[var(--line)]"
+            className="py-3 border-b border-[var(--line)]"
           >
-            <span className="font-mono text-xs text-[var(--steel)]">{l.n}</span>
             <span className="font-display text-4xl text-[var(--paper)]">{l.label}</span>
           </a>
         ))}
