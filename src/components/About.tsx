@@ -4,7 +4,7 @@ export default function About() {
       <div className="grid md:grid-cols-[0.9fr_1.4fr] gap-16 items-start">
         {/* Nombre grande, sin eyebrow */}
         <div className="md:sticky md:top-32">
-          <span className="font-mono text-xs text-[var(--ember)] tracking-widest">A/01</span>
+          <span className="font-mono text-xs text-[var(--ember)] tracking-widest"></span>
           <p className="font-display text-5xl md:text-6xl leading-[0.9] uppercase text-[var(--paper)] mt-3">
             Jhair
             <br />
