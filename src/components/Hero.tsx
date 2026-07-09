@@ -2,17 +2,13 @@
 import { useEffect, useRef } from "react";
 
 export default function Hero() {
-  const lineRef = useRef<HTMLDivElement>(null);
-  const line2Ref = useRef<HTMLDivElement>(null);
+  const imgRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
       const y = window.scrollY;
-      if (lineRef.current) {
-        lineRef.current.style.transform = `rotate(-18deg) translateY(${y * 0.08}px)`;
-      }
-      if (line2Ref.current) {
-        line2Ref.current.style.transform = `rotate(-18deg) translateY(${y * 0.05}px)`;
+      if (imgRef.current) {
+        imgRef.current.style.transform = `translateY(${y * 0.12}px)`;
       }
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -20,60 +16,57 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden px-6 pt-24">
-      {/* Líneas diagonales — firma visual, ahora en blanco */}
-      <div
-        ref={lineRef}
-        aria-hidden
-        className="pointer-events-none absolute right-[-10%] top-[10%] w-[140%] h-px bg-white opacity-[0.08]"
-        style={{ transform: "rotate(-18deg)", transformOrigin: "center" }}
-      />
-      <div
-        ref={line2Ref}
-        aria-hidden
-        className="pointer-events-none absolute right-[-10%] top-[15%] w-[140%] h-px bg-white opacity-[0.04]"
-        style={{ transform: "rotate(-18deg)", transformOrigin: "center" }}
-      />
+    <section className="relative min-h-screen flex items-center overflow-hidden px-6 pt-32 pb-16">
+      {/* Panel de imagen — blanco y negro puro, bleed derecho */}
+      <div className="pointer-events-none absolute right-0 top-0 h-full w-full md:w-[48%] opacity-70 md:opacity-100">
+        <div ref={imgRef} className="absolute inset-0 -top-16 h-[calc(100%+8rem)]">
+          <img
+            src="/portfolio/05.webp"
+            alt=""
+            className="w-full h-full object-cover"
+            style={{ filter: "grayscale(1) contrast(1.2) brightness(0.65)" }}
+          />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, #000 0%, rgba(0,0,0,0.2) 30%, transparent 55%)" }} />
+          <div className="absolute inset-0 bg-black/25" />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/50 md:hidden" />
+      </div>
 
-      {/* Glow ambiental muy sutil */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -left-40 top-1/3 w-96 h-96 rounded-full opacity-[0.03]"
-        style={{ background: "radial-gradient(circle, #fff 0%, transparent 70%)" }}
-      />
+      <div className="hidden md:flex absolute top-32 right-8 items-center gap-2 font-mono text-[0.65rem] text-[var(--steel)] tracking-widest">
+        <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+        DISPONIBLE PARA NUEVOS LANZAMIENTOS
+      </div>
 
-      <div className="max-w-5xl w-full">
-        {/* Eyebrow */}
-        <p className="eyebrow mb-6 flex items-center gap-2">
-          <span className="accent-line" />
-          Diseño Visual · Música
-        </p>
+      <div className="relative max-w-6xl w-full mx-auto">
+        {/* Panel de vidrio contenedor del mensaje principal */}
+        <div className="glass max-w-2xl p-8 md:p-12 rounded-xl">
+          <p className="font-mono text-xs tracking-[0.2em] text-[var(--steel)] mb-6">
+            ESTUDIO DE DIRECCIÓN VISUAL — PANAMÁ
+          </p>
 
-        {/* Headline */}
-        <h1 className="font-display text-[clamp(3.5rem,12vw,9rem)] leading-[0.92] tracking-tight uppercase">
-          Diseños
-          <br />
-          <span className="text-white/60">que suenan</span>
-          <br />
-          distinto
-        </h1>
+          <h1 className="font-display text-[clamp(2.8rem,8vw,6.2rem)] leading-[0.9] uppercase text-[var(--paper)]">
+            La portada
+            <br />
+            es la primera
+            <br />
+            <span style={{ WebkitTextStroke: "1.5px #fff", color: "transparent" }}>escucha</span>
+          </h1>
 
-        {/* Sub */}
-        <p className="mt-8 text-[var(--muted)] text-base max-w-md leading-relaxed font-light">
-          Cover Arts, Visualizers y contenido creativo para artistas que quieren
-          una identidad visual tan única como su música.
-        </p>
+          <p className="mt-8 text-[var(--paper-dim)] text-base max-w-md leading-relaxed font-light">
+            Cover arts, visualizers y piezas visuales para artistas urbanos que
+            buscan una identidad tan fuerte como su música. Diseño con
+            estrategia, no solo con estética.
+          </p>
 
-        {/* CTAs */}
-        <div className="mt-10 flex flex-wrap gap-4">
-          <a href="#portfolio" className="btn-primary">Ver Portafolio</a>
-          <a href="#contact" className="btn-secondary">Hablar del proyecto</a>
+          <div className="mt-10 flex flex-wrap gap-4">
+            <a href="#portfolio" className="btn-primary">Ver portafolio</a>
+            <a href="#contact" className="btn-secondary">Hablar del proyecto</a>
+          </div>
         </div>
 
-        {/* Scroll indicator */}
-        <div className="mt-20 flex items-center gap-3 text-[var(--muted)] text-[0.6rem] tracking-widest uppercase">
-          <span className="w-px h-8 bg-white/20 block" />
-          Scroll
+        <div className="mt-10 flex items-center gap-6 font-mono text-[0.65rem] text-[var(--steel)] tracking-widest uppercase">
+          <span className="w-10 h-px bg-[var(--line)]" />
+          Cover art · visualizers · dirección de marca
         </div>
       </div>
     </section>
