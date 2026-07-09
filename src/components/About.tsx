@@ -3,8 +3,7 @@ export default function About() {
     <section id="about" className="py-28 md:py-36 px-6 max-w-6xl mx-auto">
       <div className="grid md:grid-cols-[0.9fr_1.4fr] gap-16 items-start">
         <div className="md:sticky md:top-32">
-          <span className="font-mono text-xs text-[var(--steel)] tracking-widest">A/01</span>
-          <p className="font-display text-5xl md:text-6xl leading-[0.9] uppercase text-[var(--paper)] mt-3">
+          <p className="font-display text-5xl md:text-6xl leading-[0.9] uppercase text-[var(--paper)]">
             Jhair
             <br />
             Marín
