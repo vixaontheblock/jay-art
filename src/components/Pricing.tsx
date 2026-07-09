@@ -3,22 +3,14 @@ const plans = [
     name: "Estándar",
     price: "$25",
     note: "Lanzamientos esenciales",
-    features: [
-      "Cover Art esencial",
-      "Adaptación social",
-      "Entrega digital",
-    ],
+    features: ["Cover Art esencial", "Adaptación social", "Entrega digital"],
     highlight: false,
   },
   {
     name: "Pro",
     price: "$65",
     note: "El más elegido",
-    features: [
-      "Cover Art conceptual",
-      "Visualizer 15s",
-      "Social Kit (3 piezas)",
-    ],
+    features: ["Cover Art conceptual", "Visualizer 15s", "Social Kit (3 piezas)"],
     highlight: true,
   },
   {
@@ -28,7 +20,7 @@ const plans = [
     features: [
       "Cover Art de alto nivel",
       "Visualizer 30s",
-      "Video Lyric o extra visualizer",
+      "Video lyric o visualizer extra",
       "Ecosistema de redes completo",
       "Soporte estratégico",
     ],
@@ -38,82 +30,56 @@ const plans = [
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="py-32 px-6 max-w-6xl mx-auto">
-      <div className="mb-14">
-        <p className="eyebrow mb-3 flex items-center">
-          <span className="accent-line" />
-          Inversión
-        </p>
-        <h2 className="font-display text-6xl uppercase leading-none">Planes</h2>
+    <section id="pricing" className="py-28 md:py-36 px-6 max-w-6xl mx-auto">
+      <div className="section-head">
+        <h2 className="font-display text-5xl md:text-6xl uppercase leading-none text-[var(--paper)]">
+          Planes
+        </h2>
+        <p className="font-mono text-xs text-[var(--steel)]">PRECIOS EN USD — PROYECTOS A LA MEDIDA TAMBIÉN</p>
       </div>
 
       <div className="grid md:grid-cols-3 gap-4">
         {plans.map((p, i) => (
           <div
             key={i}
-            className="relative p-8 rounded-sm flex flex-col"
-            style={
+            className={`relative p-8 flex flex-col border transition-colors duration-300 ${
               p.highlight
-                ? { background: "#ffffff", color: "#050505" }
-                : { background: "#111111", border: "1px solid rgba(255,255,255,0.07)" }
-            }
+                ? "border-[var(--ember)] bg-[var(--ink-2)]"
+                : "border-[var(--line)] bg-[var(--ink)] hover:border-[var(--paper)]/15"
+            }`}
           >
             {p.highlight && (
-              <span
-                className="absolute -top-3 left-8 text-[0.6rem] font-semibold uppercase tracking-widest px-3 py-1"
-                style={{ background: "#050505", color: "#ffffff" }}
-              >
+              <span className="absolute -top-3 left-8 font-mono text-[0.6rem] uppercase tracking-widest px-3 py-1 bg-[var(--ember)] text-[var(--ink)]">
                 Recomendado
               </span>
             )}
 
-            {/* Nota */}
-            <p
-              className="text-xs uppercase tracking-widest mb-5"
-              style={{ color: p.highlight ? "rgba(5,5,5,0.45)" : "#888888" }}
-            >
+            <p className="font-mono text-[0.65rem] uppercase tracking-widest mb-6 text-[var(--steel)]">
               {p.note}
             </p>
 
-            {/* Nombre */}
-            <h3
-              className="font-display text-4xl uppercase mb-1"
-              style={{ color: p.highlight ? "#050505" : "#ffffff" }}
-            >
-              {p.name}
-            </h3>
+            <h3 className="font-display text-4xl uppercase mb-1 text-[var(--paper)]">{p.name}</h3>
 
-            {/* Precio */}
-            <p
-              className="text-4xl font-bold mb-8"
-              style={{ color: p.highlight ? "#050505" : "#ffffff" }}
-            >
+            <p className="font-display text-4xl mb-8" style={{ color: p.highlight ? "var(--ember)" : "var(--paper)" }}>
               {p.price}
             </p>
 
-            {/* Features */}
-            <ul className="text-sm space-y-3 flex-1">
+            <ul className="text-sm space-y-3 flex-1 text-[var(--paper-dim)]">
               {p.features.map((f, j) => (
-                <li
-                  key={j}
-                  className="flex items-start gap-2"
-                  style={{ color: p.highlight ? "rgba(5,5,5,0.65)" : "#888888" }}
-                >
-                  <span style={{ color: p.highlight ? "#050505" : "rgba(255,255,255,0.3)", marginTop: "2px" }}>—</span>
+                <li key={j} className="flex items-start gap-3">
+                  <span className="mt-[7px] w-3 h-px shrink-0" style={{ background: p.highlight ? "var(--ember)" : "var(--steel)" }} />
                   {f}
                 </li>
               ))}
             </ul>
 
-            {/* CTA */}
             <a
               href="#contact"
-              className="mt-8 text-center text-xs uppercase tracking-widest font-semibold py-3 px-4 transition-opacity hover:opacity-80"
-              style={
+              className={`mt-8 text-center font-mono text-xs uppercase tracking-widest py-3.5 px-4 transition-colors ${
                 p.highlight
-                  ? { background: "#050505", color: "#ffffff" }
-                  : { border: "1px solid rgba(255, 255, 255, 0.2)", color: "#ffffff" }
-              }
+                  ? "bg-[var(--ember)] text-[var(--ink)] hover:bg-[#ff6a45]"
+                  : "border border-[var(--line)] text-[var(--paper)] hover:border-[var(--paper)]/30"
+              }`}
             >
               Empezar
             </a>
