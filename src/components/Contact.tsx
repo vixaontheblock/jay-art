@@ -3,7 +3,7 @@ export default function Contact() {
     <section id="contact" className="py-28 md:py-36 px-6 max-w-6xl mx-auto">
       <div className="grid md:grid-cols-[1fr_1.3fr] gap-16 items-center">
         <div>
-          <span className="font-mono text-xs text-[var(--steel)] tracking-widest">05 — CONTACTO</span>
+          <span className="font-mono text-xs text-[var(--steel)] tracking-widest">Contacto</span>
           <h2 className="font-display text-5xl md:text-6xl uppercase leading-[0.9] mt-4 mb-6 text-[var(--paper)]">
             Hablemos
             <br />
